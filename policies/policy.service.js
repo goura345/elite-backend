@@ -12,7 +12,7 @@ module.exports = {
 
 
 async function getAll() {
-    return await Policy.find();
+    return await Policy.find().limit(10);
 }
 
 async function getById(id) {

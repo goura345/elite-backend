@@ -5,6 +5,7 @@ mongoose.connect(process.env.MONGODB_URI || config.connectionString, connectionO
 mongoose.Promise = global.Promise;
 
 module.exports = {
-    Policy: require('../policies/policy.model'),
     User: require('../users/user.model'),
+    Policy: require('../policies/policy.model'),
+    Agent: require('../agents/agent.model'),
 };
