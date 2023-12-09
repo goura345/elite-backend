@@ -8,4 +8,5 @@ module.exports = {
     User: require('../users/user.model'),
     Policy: require('../policies/policy.model'),
     Agent: require('../agents/agent.model'),
+    Insurer: require('../insurers/insurer.model'),
 };

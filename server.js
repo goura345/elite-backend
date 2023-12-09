@@ -17,6 +17,7 @@ app.use(jwt());
 app.use('/users', require('./users/users.controller'));
 app.use('/policies', require('./policies/policy.controller'));
 app.use('/agents', require('./agents/agent.controller'));
+app.use('/insurers', require('./insurers/insurer.controller'));
 
 // global error handler
 app.use(errorHandler);
