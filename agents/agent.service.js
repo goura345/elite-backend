@@ -2,7 +2,7 @@
 const db = require('_helpers/db');
 const Agent = db.Agent;
 
-module.exports = {  
+module.exports = {
     getAll,
     getById,
     create,
@@ -11,8 +11,9 @@ module.exports = {
 };
 
 
-async function getAll() { 
+async function getAll() {
     return await Agent.find().limit(10);
+    // return await Agent.find().sort({ createdAt: -1 }).limit(10);
 }
 
 async function getById(id) {
@@ -30,7 +31,7 @@ async function create(policyParam) {
     // save Agent
     await agent.save();
 
-   
+
 }
 
 async function update(id, userParam) {
