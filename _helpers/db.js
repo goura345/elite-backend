@@ -9,4 +9,5 @@ module.exports = {
     Policy: require('../policies/policy.model'),
     Agent: require('../agents/agent.model'),
     Insurer: require('../insurers/insurer.model'),
+    Product: require('../products/product.model'),
 };

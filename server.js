@@ -18,6 +18,7 @@ app.use('/users', require('./users/users.controller'));
 app.use('/policies', require('./policies/policy.controller'));
 app.use('/agents', require('./agents/agent.controller'));
 app.use('/insurers', require('./insurers/insurer.controller'));
+app.use('/products', require('./products/product.controller'));
 
 // global error handler
 app.use(errorHandler);
