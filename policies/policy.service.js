@@ -2,7 +2,7 @@
 const db = require('_helpers/db');
 const Policy = db.Policy;
 
-module.exports = {  
+module.exports = {
     getAll,
     getById,
     create,
@@ -19,18 +19,10 @@ async function getById(id) {
     return await Policy.findById(id);
 }
 
-async function create(policyParam) {
-    console.log(policyParam);
-    // validate
-    // if (await Policy.findOne({ policyId: policyParam.policyId })) {
-    //     throw 'Policy ID "' + policyParam.policyId + '" is already taken';
-    // }
-
+async function create(policyParam) {   
     const policy = new Policy(policyParam);
     // save Policy
     await policy.save();
-
-   
 }
 
 async function update(id, userParam) {
