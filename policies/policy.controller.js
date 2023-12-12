@@ -1,4 +1,5 @@
-﻿const express = require('express');
+﻿require('dotenv').config();
+const express = require('express');
 const router = express.Router();
 const policyService = require('./policy.service');
 
@@ -6,9 +7,9 @@ const zlib = require('zlib');
 const util = require('util');
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3({
-    accessKeyId: 'AKIAQHVWIUX56OGJLSBN',
-    secretAccessKey: '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',
-    region: 'us-east-2',
+    accessKeyId: process.env.ACCESS_KEY_ID,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    region: process.env.REGION
 });
 const multer = require('multer');
 const storage = multer.memoryStorage(); // Store the file in memory instead of on disk
