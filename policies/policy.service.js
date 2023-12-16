@@ -1,4 +1,4 @@
-﻿const config = require('config.json');
+﻿require('dotenv').config();
 const db = require('_helpers/db');
 const Policy = db.Policy;
 

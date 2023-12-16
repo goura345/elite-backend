@@ -1,5 +1,4 @@
-﻿const config = require('config.json');
-const db = require('_helpers/db');
+﻿const db = require('_helpers/db');
 const Product = db.Product;
 
 module.exports = {
