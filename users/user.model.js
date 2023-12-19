@@ -1,18 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
+const schema = new Schema({   
+    loginId: { type: String, default: '' },
     username: { type: String },
-    hash: { type: String },
-    profile_id_id: { type: String },
-    login_id: { type: String },
-    staffname: { type: String },
+    hash: { type: String },   
     firstName: { type: String },
     lastName: { type: String },
-    status: { type: String },
-    profile_image: { type: String },
-    mobileNumber: { type: String },
-    role: { type: String },
+    mobileNumber: { type: String, default: '' },
+    profileImageUrl: { type: String, default: '' },
+    role: { type: String, default: 'LEAD' },
+    status: { type: String, default: 'ACTIVE' },
     createdDate: { type: Date, default: Date.now }
 });
 
