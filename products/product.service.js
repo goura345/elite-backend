@@ -10,8 +10,7 @@ module.exports = {
 };
 
 
-async function getAll() {
-    console.log(await Product.find());
+async function getAll() {  
     return await Product.find();
     // return await Product.find().sort({ createdAt: -1 }).limit(10);
 }

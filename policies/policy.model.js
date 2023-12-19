@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    policyid: { type: String },
+    // policyid: { type: String },
     profile_id_id: { type: String },
     proposal_no: { type: String },
     policy_no: { type: String },
@@ -27,12 +27,13 @@ const schema = new Schema({
     coverage_type: { type: String },
     policy_type: { type: String },
     cpa: { type: String },
-    risk_start_date: { type: String },
-    risk_end_date: { type: String },
-    issue_date: { type: String },
+    risk_start_date: { type: Date },
+    risk_end_date: { type: Date },
+    issue_date: { type: Date },
     insured_age: { type: String },
     policy_term: { type: String },
     bqp: { type: String },
+    pos_name: { type: String },
     pos: { type: String },
     employee: { type: String },
     OD_premium: { type: String },

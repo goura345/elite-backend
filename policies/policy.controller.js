@@ -72,28 +72,22 @@ async function uploadFiles(req, res, next) {
     if (!files || files.length === 0) {
         return res.status(400).json({ error: 'No files provided' });
     }
-
     // console.log('files: ', files);
-
     const uploadedFileNames = [];
-
     try {
         await Promise.all(files.map(async (file) => {
-            const fileName = file.originalname;
+            const fileName = 'media/documents/' + file.originalname;
             const compressedBuffer = await util.promisify(zlib.gzip)(file.buffer);
-
             await s3.upload({
-                Bucket: 'ebook-docs',
+
+                Bucket: process.env.BUCKET_NAME,
                 Key: fileName,
                 Body: compressedBuffer,
                 ContentEncoding: 'gzip',
             }).promise();
-
             uploadedFileNames.push(fileName);
         }));
-
         console.log('Successfully uploaded!');
-
         // Verify that all uploads are done
         if (uploadedFileNames.length === files.length) {
             res.status(200).json({ message: 'Successfully uploaded!', fileNames: uploadedFileNames });
