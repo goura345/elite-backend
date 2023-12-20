@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
-    // policyid: { type: String },
-    profile_id_id: { type: String },
+const schema = new Schema({   
     proposal_no: { type: String },
     policy_no: { type: String },
     customer_name: { type: String },
