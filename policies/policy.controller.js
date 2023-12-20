@@ -21,6 +21,7 @@ router.post('/register', register);
 router.get('/', getAll);
 router.get('/current', getCurrent);
 router.get('/:id', getById);
+router.get('/proposal_no/:proposal_no', getByProposalNumber);
 router.put('/:id', update);
 router.delete('/:id', _delete);
 router.post('/uploadFiles', upload.array('files'), uploadFiles);
@@ -48,6 +49,13 @@ function getCurrent(req, res, next) {
 
 function getById(req, res, next) {
     policyService.getById(req.params.id)
+        .then(user => user ? res.json(user) : res.sendStatus(404))
+        .catch(err => next(err));
+}
+
+function getByProposalNumber(req, res, next) {
+    console.log('getByProposalNumber calling:');
+    policyService.getByProposalNumber(req.params.proposal_no)
         .then(user => user ? res.json(user) : res.sendStatus(404))
         .catch(err => next(err));
 }
