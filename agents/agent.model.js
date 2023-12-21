@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    login_id: { type: String, required: true },
-    profile_id_id: { type: String, required: true },
+    login_id: { type: String },
     posp_code: { type: String, required: true },
     registration_code: { type: String, required: true },
     full_name: { type: String, required: true },
@@ -24,10 +23,10 @@ const schema = new Schema({
     aadhar_card: { type: String, required: true },
     pan_card: { type: String, required: true },
     training_certificate: { type: String, required: true },
-    appointment_certificate: { type: String, required: true },
+    appointment_certificate: { type: String},
     agreement_certificate: { type: String, required: true },
     bank_details: { type: String, required: true },
-    password: { type: String, required: true },
+    password: { type: String },
     created_by: { type: String, required: true },
     created_at: { type: Date, default: Date.now },
     status: { type: String, required: true },

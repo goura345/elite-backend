@@ -22,9 +22,9 @@ async function getById(id) {
 async function create(policyParam) {
     console.log(policyParam);
     // validate
-    // if (await Agent.findOne({ policyId: policyParam.policyId })) {
-    //     throw 'Agent ID "' + policyParam.policyId + '" is already taken';
-    // }
+    if (await Agent.findOne({ posp_code: policyParam.posp_code })) {
+        throw 'Agent ID "' + policyParam.policyId + '" is already taken';
+    }
 
     const agent = new Agent(policyParam);
     // save Agent
@@ -33,24 +33,12 @@ async function create(policyParam) {
 
 }
 
-async function update(id, userParam) {
-    const Agent = await Agent.findById(id);
-
-    // validate
-    if (!Agent) throw 'Agent not found';
-    if (Agent.username !== userParam.username && await Agent.findOne({ username: userParam.username })) {
-        throw 'Username "' + userParam.username + '" is already taken';
-    }
-
-    // hash password if it was entered
-    if (userParam.password) {
-        userParam.hash = bcrypt.hashSync(userParam.password, 10);
-    }
-
-    // copy userParam properties to Agent
-    Object.assign(Agent, userParam);
-
-    await Agent.save();
+async function update(id, userParam) {       
+    const agent = await Agent.findById(id);
+    if (!agent) throw 'Agent not found';
+    // copy userParam properties to agent
+    Object.assign(agent, userParam);
+    await agent.save();
 }
 
 async function _delete(id) {
