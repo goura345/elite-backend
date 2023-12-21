@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
-    profile_id_id: { type: String, required: true },
+const schema = new Schema({  
     comp_name: { type: String, required: true },   
     status: { type: String, required: true },
     created_at: { type: Date, default: Date.now },
