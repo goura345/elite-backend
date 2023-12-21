@@ -2,15 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({   
-    loginId: { type: String, default: '' },
+    loginId: { type: String },
     username: { type: String },
     hash: { type: String },   
     firstName: { type: String },
     lastName: { type: String },
-    mobileNumber: { type: String, default: '' },
-    profileImageUrl: { type: String, default: '' },
+    mobileNumber: { type: String },
+    email: { type: String },
+    profileImageUrl: { type: String,  },
     role: { type: String, default: 'LEAD' },
     status: { type: String, default: 'ACTIVE' },
+    createdBy: { type: String },
     createdDate: { type: Date, default: Date.now }
 });
 
