@@ -8,12 +8,12 @@ module.exports = {
     getByProposalNumber,
     create,
     update,
-    delete: _delete
+    delete: _delete,  
 };
 
 
-async function getAll() {
-    return await Policy.find().limit(10);
+async function getAll() {   
+    // return await Policy.find().limit(10);
     return await Policy.find();
 }
 
@@ -32,7 +32,7 @@ async function create(policyParam) {
     await policy.save();
 }
 
-async function update(id, userParam) {  
+async function update(id, userParam) {
     const policy = await Policy.findById(id);
     if (!policy) throw 'Policy not found';
     // copy userParam properties to Policy
@@ -43,3 +43,10 @@ async function update(id, userParam) {
 async function _delete(id) {
     await Policy.findByIdAndRemove(id);
 }
+
+// async function countDocuments() {
+
+//     const count = await Policy.countDocuments({}).exec();
+//     console.log(`Number of documents in the collection: ${count}`);
+//     return count 
+// }
