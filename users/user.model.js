@@ -13,7 +13,7 @@ const schema = new Schema({
     role: { type: String, default: 'LEAD' },
     status: { type: String, default: 'ACTIVE' },
     createdBy: { type: String },
-    createdDate: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now }
 });
 
 schema.set('toJSON', {
