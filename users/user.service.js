@@ -25,7 +25,8 @@ async function authenticate({ username, password }) {
 }
 
 async function getAll() {
-    return await User.find().sort({ createdAt: -1 }).limit(10)   
+    return await User.find().sort({ createdAt: -1 })  
+    // return await User.find().sort({ createdAt: -1 }).limit(10)   
     // return await User.find();
 }
 

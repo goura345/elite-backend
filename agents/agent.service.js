@@ -11,7 +11,8 @@ module.exports = {
 
 
 async function getAll() {
-    return await Agent.find();
+    return await Agent.find().sort({ created_at: -1 })  
+    // return await Agent.find();
     // return await Agent.find().sort({ createdAt: -1 }).limit(10);
 }
 
