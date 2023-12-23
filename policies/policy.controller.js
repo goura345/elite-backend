@@ -28,7 +28,6 @@ router.post('/uploadFiles', upload.array('files'), uploadFiles);
 
 module.exports = router;
 
-
 function register(req, res, next) {
     policyService.create(req.body)
         .then(() => res.json({}))

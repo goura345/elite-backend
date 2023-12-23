@@ -9,6 +9,7 @@ module.exports = {
     create,
     update,
     delete: _delete,  
+   
 };
 
 
@@ -44,9 +45,3 @@ async function _delete(id) {
     await Policy.findByIdAndRemove(id);
 }
 
-// async function countDocuments() {
-
-//     const count = await Policy.countDocuments({}).exec();
-//     console.log(`Number of documents in the collection: ${count}`);
-//     return count 
-// }
