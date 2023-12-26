@@ -19,6 +19,7 @@ const upload = multer({ storage: storage, limits: { fileSize: 10 * 1024 * 1024 }
 // routes
 router.post('/register', register);
 router.get('/', getAll);
+router.post('/getFromRange', getFromRange);
 router.get('/current', getCurrent);
 router.get('/:id', getById);
 router.get('/proposal_no/:proposal_no', getByProposalNumber);
@@ -107,4 +108,13 @@ async function uploadFiles(req, res, next) {
     }
 }
 
+function getFromRange(req, res, next) {
+    console.log('getFromRange calling');
+
+    console.log(req.body.frmDate, '  ', req.body.toDate);
+
+    policyService.getFromRange(req.body.frmDate, req.body.toDate)
+        .then(users => res.json(users))
+        .catch(err => next(err));
+}
 
