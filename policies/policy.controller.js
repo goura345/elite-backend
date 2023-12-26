@@ -117,7 +117,6 @@ function getFromRange(req, res, next) {
     frmDate = req.params.range.split('|')[0]
     toDate = req.params.range.split('|')[1]
 
-
     policyService.getFromRange(frmDate, toDate)
         .then(users => res.json(users))
         .catch(err => next(err));
