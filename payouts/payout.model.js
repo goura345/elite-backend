@@ -3,11 +3,8 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({   
     payout_name: { type: String },   
-    insurance_company: { type: String },
-    sp_name: { type: String },
-    sp_brokercode: { type: String },
-    product_name: { type: String },
-    registration_no: { type: String },
+    insurance_company: { type: String },   
+    product_name: { type: String },   
     rto_state: { type: String },
     rto_city: { type: String },
     vehicle_makeby: { type: String },
@@ -38,6 +35,7 @@ const schema = new Schema({
     remark: { type: String },
    
     status: { type: String },  
+    createdBy: { type: String },  
     createdAt: { type: Date, default: Date.now }
 });
 
