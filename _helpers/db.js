@@ -11,4 +11,5 @@ module.exports = {
     Agent: require('../agents/agent.model'),
     Insurer: require('../insurers/insurer.model'),
     Product: require('../products/product.model'),
+    Payout: require('../payouts/payout.model'),
 };

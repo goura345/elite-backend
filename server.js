@@ -19,6 +19,7 @@ app.use('/agents', require('./agents/agent.controller'));
 app.use('/insurers', require('./insurers/insurer.controller'));
 app.use('/products', require('./products/product.controller'));
 app.use('/policies', require('./policies/policy.controller'));
+app.use('/payouts', require('./payouts/payout.controller'));
 
 // This should be placed to their services but due to some lazy loading errors, are placed here
 require('dotenv').config();
