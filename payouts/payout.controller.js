@@ -20,6 +20,8 @@ function register(req, res, next) {
 }
 
 function getAll(req, res, next) {
+
+
     payoutService.getAll()
         .then(users => res.json(users))
         .catch(err => next(err));
@@ -48,4 +50,5 @@ function _delete(req, res, next) {
         .then(() => res.json({}))
         .catch(err => next(err));
 }
+
 

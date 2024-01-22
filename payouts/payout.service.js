@@ -30,6 +30,9 @@ async function update(id, userParam) {
     const payout = await Payout.findById(id);
     if (!payout) throw 'Payout not found';
     // copy userParam properties to payout
+
+
+    
     Object.assign(payout, userParam);
     await payout.save();
 }
